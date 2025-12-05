@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="todomobile.View.LoginPage"
+             Title="LoginPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Login"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        
+        
+        <Entry Text="{Binding Username}"
+               Placeholder="Username"
+               Keyboard="Email">
+        </Entry>
+
+        <Entry Text="{Binding Password}"
+               IsPassword="True"
+               Keyboard="Password">
+        </Entry>
+        <Button Command="{Binding LoginCommand}" Text="Login">
+        </Button>
+    </VerticalStackLayout>
+</ContentPage>
