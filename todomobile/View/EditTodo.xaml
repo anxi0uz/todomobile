@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="todomobile.View.EditTodo"
+             Title="EditTodo">
+    <ScrollView>
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,*,Auto"
+              ColumnDefinitions="150,*,100,100"
+              RowSpacing="15"
+              ColumnSpacing="15">
+
+            <Label Text="Редактирование задачи"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0"
+                   Margin="0,0,0,30"/>
+            
+            <Label Text="UserId" FontAttributes="Bold" VerticalOptions="Center" Grid.Row="1" Grid.Column="0"/>
+            <Entry Text="{Binding UserId}" 
+                   IsReadOnly="True"
+                   Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+            <Label Text="Название" FontAttributes="Bold" VerticalOptions="Center" Grid.Row="2" Grid.Column="0"/>
+            <Entry Text="{Binding Name}" 
+                   Placeholder="Введите название"
+                   Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+            <Label Text="Описание" FontAttributes="Bold" VerticalOptions="Start" Grid.Row="3" Grid.Column="0"/>
+
+            <Editor Text="{Binding Description}" 
+                    Placeholder="Введите описание..."
+                    HeightRequest="150"
+                    Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+
+            <BoxView Grid.Row="5" Grid.ColumnSpan="4" HeightRequest="20"/>
+
+            <Button Text="Сохранить"
+                    Command="{Binding UpdateTodoCommand}"
+                    Grid.Row="6" Grid.Column="2"/>
+
+            <Button Text="Удалить"
+                    Command="{Binding DeleteTodoCommand}"
+                    Grid.Row="6" Grid.Column="3"/>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

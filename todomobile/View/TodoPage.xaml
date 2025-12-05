@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="page"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="todomobile.View.TodoPage"
+             Title="TodoPage"
+             xmlns:models ="clr-namespace:todomobile.Models">
+    <Grid RowDefinitions="60,*" ColumnDefinitions="*,Auto,600,Auto,*" Padding="20">
+        <Button Text="Выйти" Command="{Binding LogoutCommand}" Grid.Row="0" Grid.Column="1"/>
+        <Button Text="Обновить" Command="{Binding GetTodosCommand}" Grid.Row="0" Grid.Column="3"/>
+        <CollectionView ItemsSource="{Binding Todos}" SelectionMode="None"
+                    Grid.Column="2" Grid.Row="1"
+                    MaximumWidthRequest="800">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Todo">
+                    <Grid Padding="16,12" BackgroundColor="White">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="2"
+                                          Command="{Binding BindingContext.OpenTodoCommand, Source={RelativeSource AncestorType={x:Type CollectionView}}}"
+                                          CommandParameter="{Binding .}" />
+                        </Grid.GestureRecognizers>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1"
+                       Text="{Binding Name}" TextColor="Black"></Label>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Добавить" Command="{Binding AddTodoCommand}" Grid.Row="1" Grid.Column="3"/>
+    </Grid>
+</ContentPage>

@@ -30,7 +30,7 @@ namespace todomobile.ViewModels
             if (response != null)
             {
                 await SecureStorage.SetAsync("Jwt", response.AccessToken);
-                await Shell.Current.GoToAsync("//MainPage");
+                await Shell.Current.GoToAsync("//TodoPage");
             }
         }
     }

@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace todomobile.Models
 {
-    class TodoRequest
-    {
-    }
+    public record TodoRequest(int userid, string name, string description);
 }

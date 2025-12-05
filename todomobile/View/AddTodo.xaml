@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="todomobile.View.AddTodo"
+             Title="AddTodo">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Entry IsReadOnly="True" Text="Создание Todo" Grid.Row="0"></Entry>
+        <Entry IsReadOnly="False" Placeholder="Введите название" Text="{Binding Name}" Grid.Row="1"></Entry>
+        <Entry IsReadOnly="False" Placeholder="Введите название" Text="{Binding Description}" Grid.Row="2"></Entry>
+        <Button Command="{Binding AddTodoCommand}" Text="Создать тудушку" Grid.Row="3">
+            
+        </Button>
+    </Grid>
+</ContentPage>

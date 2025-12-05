@@ -15,5 +15,17 @@
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+    <ShellContent
+        Title="Todos"
+        ContentTemplate="{DataTemplate view:TodoPage}"
+        Route="TodoPage"/>
+    <ShellContent
+        Title="EditTodo"
+        ContentTemplate="{DataTemplate view:EditTodo}"
+        Route="EditTodo"/>
+    <ShellContent
+        Title="AddTodo"
+        ContentTemplate="{DataTemplate view:AddTodo}"
+        Route="AddTodo"/>
 
 </Shell>

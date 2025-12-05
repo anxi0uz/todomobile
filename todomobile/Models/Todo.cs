@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace todomobile.Models
 {
-    class Todo
+    public class Todo
     {
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public string Name { get; set; }
+        public int UserId { get; set; }
     }
 }
