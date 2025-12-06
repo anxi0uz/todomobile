@@ -25,7 +25,8 @@ namespace todomobile
     		builder.Logging.AddDebug();
 #endif
             builder.Services.AddTransient<AuthorizationMessageHandler>();
-            builder.Services.AddHttpClient<HttpClient>("Api",opt=>opt.BaseAddress = new Uri("https://localhost:7068")).AddHttpMessageHandler<AuthorizationMessageHandler>();
+            builder.Services.AddHttpClient<HttpClient>("Api",opt=>opt.BaseAddress = new Uri("http://10.0.2.2:5005")).AddHttpMessageHandler<AuthorizationMessageHandler>();
+            //builder.Services.AddHttpClient<HttpClient>("Api",opt=>opt.BaseAddress = new Uri(ApiConfiguration.GetApiUrl())).AddHttpMessageHandler<AuthorizationMessageHandler>();
             builder.Services.AddSingleton<LoginPage>();
             builder.Services.AddSingleton<AppShell>();
             builder.Services.AddSingleton<TodoPage>();

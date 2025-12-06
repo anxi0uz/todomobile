@@ -5,7 +5,7 @@
              x:Class="todomobile.View.TodoPage"
              Title="TodoPage"
              xmlns:models ="clr-namespace:todomobile.Models">
-    <Grid RowDefinitions="60,*" ColumnDefinitions="*,Auto,600,Auto,*" Padding="20">
+    <Grid RowDefinitions="60,*" ColumnDefinitions="*,Auto,100,Auto,*" Padding="20">
         <Button Text="Выйти" Command="{Binding LogoutCommand}" Grid.Row="0" Grid.Column="1"/>
         <Button Text="Обновить" Command="{Binding GetTodosCommand}" Grid.Row="0" Grid.Column="3"/>
         <CollectionView ItemsSource="{Binding Todos}" SelectionMode="None"
